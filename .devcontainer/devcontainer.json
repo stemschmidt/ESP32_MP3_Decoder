@@ -1,0 +1,26 @@
+//devcontainer.json
+{
+    "name": "ESP32S2 SDK",
+    "build": {
+        "dockerfile": "dockerfile"
+    },
+
+    "postStartCommand": "/bin/bash /opt/esp/idf/install.sh && . /opt/esp/idf/export.sh && /bin/bash",
+
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "bash",
+                "icon": "terminal-bash"
+            }
+        }
+    },
+    
+    "remoteUser": "vscode",
+
+    "runArgs": [
+        "--add-host=host.docker.internal:host-gateway",
+        "--rm"
+    ]
+}
+  
